@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //submenu green - 88,107,54 #586b36
 //submenu greenbg - 42,51,24 #2a3318 80%
 //header greenbg 31,38,18 #1f2612 70%
+//isle blue 76,173,197 #4cadc5
 
 	//init();
 	//animate();
@@ -184,6 +185,13 @@ document.addEventListener("DOMContentLoaded", function () {
     popcornMedia[1].on( "ended", function() {
     	advancePopcornMedia();
 	});
+    popcornMedia[16].on( "ended", function() {
+        $("#selectmissionrocket").animate({opacity: 1.0}, 200, function() {
+        	$("#selectmissionrocket").css('pointer-events', 'auto');
+    	});
+	});
+    
+
 	
     popcornMedia[1].cue( 6.5, function() {
     	Tweener(ssScale, {planetScale:.00001}, 1000);
@@ -876,6 +884,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		
       });
     
+    
   //from main.js
   if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
@@ -1060,6 +1069,29 @@ document.addEventListener("DOMContentLoaded", function () {
 			<div id="browserpopupclose" class="closebutton"><p>&#10006;</p></div>
 			<h1>Browser</h1>
 			<p>The browser page</p>
+		</div>
+		
+		<div id="selectmissionrocket" class="islediv">
+			<h1>Select Mission Rocket</h1>
+			<table width="100%">
+				<tr>
+					<td width="33%" align="center" valign="bottom"><img src="./images/rocket_falcon.png"></td>
+					<td width="33%" align="center" valign="bottom"><img src="./images/rocket_deltaIV.png"></td>
+					<td width="33%" align="center" valign="bottom"><img src="./images/rocket_nasasls.png"></td>
+				</tr>
+				<tr>
+					<td width="33%" align="center">Falcon Heavy</td>
+					<td width="33%" align="center">Delta IV Heavy</td>
+					<td width="33%" align="center">NASA SLS</td>
+				</tr>
+				<tr>
+					<td width="33%" align="center"><input type="checkbox" id="checkboxfalcon"  class="regular-checkbox" /></td>
+					<td width="33%" align="center"><input type="checkbox" id="checkboxdeltaIV"  class="regular-checkbox" /></td>
+					<td width="33%" align="center"><input type="checkbox" id="checkboxnasasls"  class="regular-checkbox" /></td>
+				</tr>
+			</table>
+			
+			
 		</div>
 		
 		
